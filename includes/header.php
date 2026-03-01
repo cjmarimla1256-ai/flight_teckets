@@ -1,10 +1,22 @@
+<?php
+/**
+ * Page Header Component
+ * 
+ * Displays the main page header with title and live clock.
+ * The clock updates every second showing Manila timezone.
+ */
+?>
 <header class="page-header">
     <h1>Flight Schedule System</h1>
     <p id="currentDateTime"></p>
 </header>
 
 <script>
-// Function to update date and time every second
+/**
+ * Update date and time display every second
+ * Shows current date and time in Manila timezone (Asia/Manila)
+ * Format: "Weekday, Month Day, Year HH:MM:SS AM/PM"
+ */
 function updateDateTime() {
     const now = new Date();
     const options = { 
@@ -16,9 +28,9 @@ function updateDateTime() {
     document.getElementById('currentDateTime').textContent = manilaTime;
 }
 
-// Initial call
+// Initial call to display time immediately
 updateDateTime();
 
-// Update every second
+// Update every second (1000ms)
 setInterval(updateDateTime, 1000);
 </script>
